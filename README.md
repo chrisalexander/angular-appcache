@@ -30,13 +30,7 @@ Alternatively, apply the update, then immediately reload the page (note the `tru
 
     appcache.checkForUpdate().then(function(applyUpdate) {
       // A new version is available
-
       applyUpdate(true);
-
-      // Finally, you can apply the update, then later reload the page:
-      var finaliseApply = applyUpdate();
-      // Ask the user, save their work etc, then:
-      finaliseApply();
     }, function() {
       // No update is available
     });
