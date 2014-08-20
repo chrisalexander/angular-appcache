@@ -9,6 +9,10 @@ Simply specify a dependency upon "appcache" and include the script:
 
     angular.module("mymodule", ["appcache"]);
 
+## Dependencies
+
+Appcache has a dependency on the "ca-helpers" module which can be found [here](https://github.com/chrisalexander/ca-helpers/blob/master/ca-helpers.js).
+
 # Services
 
 ## appcache
