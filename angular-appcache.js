@@ -10,7 +10,7 @@ angular.module("appcache").factory("appcache", function($rootScope, $q, caHelper
       def.reject();
       return def.promise;
     }
-  }
+  };
 
   // If there is no appcache available, return null functions
   if (!appCache) {
@@ -19,14 +19,14 @@ angular.module("appcache").factory("appcache", function($rootScope, $q, caHelper
 
   var handleCacheEvent = function(e) {
     $rootScope.$broadcast("appcache." + e.type, e);
-  }
+  };
 
   var bootstrapEvents = function() {
     ["cached", "checking", "downloading", "error", "noupdate",
     "obsolete", "progress", "updateready"].map(function(eventName) {
       appCache.addEventListener(eventName, handleCacheEvent, false);
     });
-  }
+  };
   bootstrapEvents();
 
   iface.checkForUpdate = function() {
@@ -37,7 +37,7 @@ angular.module("appcache").factory("appcache", function($rootScope, $q, caHelper
         appCache.swapCache();
         var applyUpdateNow = function() {
           window.location.reload();
-        }
+        };
         if (now) {
           applyUpdateNow();
           return function() {};
@@ -49,7 +49,7 @@ angular.module("appcache").factory("appcache", function($rootScope, $q, caHelper
       def.reject();
     });
     return def.promise;
-  }
+  };
 
   return iface;
 
